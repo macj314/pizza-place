@@ -29,8 +29,6 @@ Pizza.prototype.priceCalculator = function(){
 $(document).ready(function(){
   $("#submit").click(function(event){
     event.preventDefault();
-    // let inputToppings = $("input:checkbox[name=toppings]:checked").val;
-    // console.log(inputToppings);
     let inputSize = parseInt($("input:radio[name=size]:checked").val());
     console.log(inputSize);
     let pizza = new Pizza(inputSize);
@@ -38,6 +36,10 @@ $(document).ready(function(){
       pizza.toppings.push($(this).val());
     });
     console.log(pizza);
-    $("#price-output").text(pizza.priceCalculator());
+    if (isNaN(inputSize) === true){
+      $("#price-output").text("Please select a size for your pizza!");
+    } else {
+      $("#price-output").text("$" + pizza.priceCalculator());
+    }
   })
 })
