@@ -28,6 +28,7 @@ _This is a small page that holds data inside of pizza objects. The user should b
 
 ### Additional Work
 * Style site with css and images.
+* Allow users to pick how much of the pizza is covered with a particular topping.
 * Allow user to order more than one pizza with different toppings.
 * Display the list of pizzas ordered as links that can be clicked for details.
 * Offer a delivery option that then requires address information.
