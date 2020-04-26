@@ -10,15 +10,14 @@ function Pizza(size){
 //     this.toppings.push(inputT);
 // }
 
-Pizza.prototype.priceCalculator = function(pie){
-  let price;
+Pizza.prototype.priceCalculator = function(){
+  let price = this.size;
   let cheapToppings = "pepperoni spinach pineapple jalapenos";
   let expensiveToppings = ["artichoke", "olives", "beef"];
-  price += pie.size;
-  for(i = 0; i < pie.toppings.length; i++){
-    if(pie.toppings[i].includes(cheapToppings)){
+  for(i = 0; i < this.toppings.length; i++){
+    if(this.toppings[i].includes(cheapToppings)){
       price += 1;
-    } else if (pie.toppings[i].includes(expensiveToppings)){
+    } else if (this.toppings[i].includes(expensiveToppings)){
       price += 2;
     }
   }
@@ -35,8 +34,8 @@ $(document).ready(function(){
     let pizza = new Pizza(inputSize);
     $("input:checkbox[name=toppings]:checked").each(function(){
       pizza.toppings.push($(this).val());
-      console.log(pizza);
     });
     console.log(pizza);
+    console.log(pizza.priceCalculator());
   })
 })
