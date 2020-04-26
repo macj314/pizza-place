@@ -12,13 +12,15 @@ function Pizza(size){
 
 Pizza.prototype.priceCalculator = function(){
   let price = this.size;
-  let cheapToppings = "pepperoni spinach pineapple jalapenos";
+  let cheapToppings = ["pepperoni", "spinach", "pineapple", "jalapenos"];
   let expensiveToppings = ["artichoke", "olives", "beef"];
   for(i = 0; i < this.toppings.length; i++){
-    if(this.toppings[i].includes(cheapToppings)){
-      price += 1;
-    } else if (this.toppings[i].includes(expensiveToppings)){
-      price += 2;
+    for(j = 0; j <= 4; j++){
+      if(this.toppings[i].includes(cheapToppings[j])){
+        price += 1;
+      } else if (this.toppings[i].includes(expensiveToppings[j])){
+        price += 2;
+      }
     }
   }
   return price;
@@ -29,7 +31,7 @@ $(document).ready(function(){
     event.preventDefault();
     // let inputToppings = $("input:checkbox[name=toppings]:checked").val;
     // console.log(inputToppings);
-    let inputSize = $("input:radio[name=size]:checked").val();
+    let inputSize = parseInt($("input:radio[name=size]:checked").val());
     console.log(inputSize);
     let pizza = new Pizza(inputSize);
     $("input:checkbox[name=toppings]:checked").each(function(){
