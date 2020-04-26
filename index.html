@@ -8,16 +8,16 @@
   </head>
   <body>
     <h1>Pizza Place</h1>
-    <div id="form-one">
-      <div class="size-field">
-        <label for="size">Size</label>
+    <div class="container" id="form-one">
+      <div class="size-field container row">
+        <h4>Size</h4>
         <label>Small<input type="radio" name="size" id="small" value=7></label>
         <label>Medium<input type="radio" name="size" id="medium" value=10></label>
         <label>Large<input type="radio" name="size" id="large" value=12></label>
         <label>Family<input type="radio" name="size" id="family" value=15></label>
       </div>
-      <div class="toppings-field">
-        <label for="toppings">Toppings</label>
+      <div class="toppings-field container">
+        <h4>Toppings</h4>
         <label>Pepperoni<input type="checkbox" name="toppings" value="pepperoni"></label>
         <label>Spinach<input type="checkbox" name="toppings" value="spinach"></label>
         <label>Pineapple</label><input type="checkbox" name="toppings" value="pineapple"></label>
@@ -28,5 +28,6 @@
       </div>
       <button id="submit">Submit</button>
     </div>
+    <div id="price-output"></div>
   </body>
 </html>

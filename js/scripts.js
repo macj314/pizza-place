@@ -38,6 +38,6 @@ $(document).ready(function(){
       pizza.toppings.push($(this).val());
     });
     console.log(pizza);
-    console.log(pizza.priceCalculator());
+    $("#price-output").text(pizza.priceCalculator());
   })
 })
