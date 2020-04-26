@@ -14,8 +14,15 @@ Pizza.prototype.AddToppings = function(inputT){
 
 Pizza.prototype.priceCalculator = function(pizza){
   let price;
-  let cheapToppings = ["pepperoni", "spinach", "pineapple", "jalapenos"];
+  let cheapToppings = "pepperoni spinach pineapple jalapenos";
   let expensiveToppings = ["artichoke hearts", "olives", "shredded beef"];
   price += this.size;
-  for(i = 0; i < this.toppings.length; i++)
+  for(i = 0; i < this.toppings.length; i++){
+    if(this.toppings[i].includes(cheapToppings)){
+      price += 1;
+    } else if (this.toppings[i].includes(expensiveToppings)){
+      price += 2;
+    }
+  }
+  return price;
 }
