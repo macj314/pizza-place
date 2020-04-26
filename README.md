@@ -22,9 +22,10 @@ _This is a small page that holds data inside of pizza objects. The user should b
   Object attributes: size, toppings []
 
 * Have a formula that you can referense to determine the price of the selected pizza.
-  Formula: size + (number of toppings * 2) = "price"
-  Input: small pizza with pepperoni
-  Output: 8 + (1 * 2) = "$10"
+  Formula: price = size + (x * 1) + (y * 2)
+    x represents 'cheap' toppings. y represents slightly more expensive toppings.
+  Input: small pizza with pepperoni(x), olives(y), and artichoke hearts(y)
+  Output: 7 + (1 * 1) + (2 * 2) = "$12"
 
 ### Additional Work
 * Style site with css and images.
