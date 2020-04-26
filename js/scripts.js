@@ -33,8 +33,9 @@ $(document).ready(function(){
     let inputSize = $("input:radio[name=size]:checked").val();
     console.log(inputSize);
     let pizza = new Pizza(inputSize);
-    $("input:checkbox[name=work-transportation]:checked").each(function(){
+    $("input:checkbox[name=toppings]:checked").each(function(){
       pizza.toppings.push($(this).val());
+      console.log(pizza);
     });
     console.log(pizza);
   })
