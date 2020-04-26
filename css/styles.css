@@ -1,0 +1,22 @@
+body{
+  text-align: center;
+}
+
+#form-one{
+  border: solid 1px black;
+  background-color: rgb(52, 99, 187);
+}
+
+.size-field{
+  background-color: cornflowerblue;
+  margin: 10px;
+  padding: 10px;
+  border: solid 1px cornsilk;
+}
+
+.toppings-field{
+  background-color: cornflowerblue;
+  margin: 10px;
+  padding: 10px;
+  border: solid 1px rgb(119, 128, 250);
+}

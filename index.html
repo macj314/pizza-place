@@ -9,8 +9,9 @@
   <body>
     <h1>Pizza Place</h1>
     <div class="container" id="form-one">
-      <div class="size-field container row">
+      <div class="size-field container">
         <h4>Size</h4>
+        <h5>Price per size is: small, $7 | medium, $10 | large, $12 | family, $15</h5>
         <label>Small<input type="radio" name="size" id="small" value=7></label>
         <label>Medium<input type="radio" name="size" id="medium" value=10></label>
         <label>Large<input type="radio" name="size" id="large" value=12></label>
@@ -18,16 +19,20 @@
       </div>
       <div class="toppings-field container">
         <h4>Toppings</h4>
+        <h5>$1 in additional costs</h5>
         <label>Pepperoni<input type="checkbox" name="toppings" value="pepperoni"></label>
         <label>Spinach<input type="checkbox" name="toppings" value="spinach"></label>
         <label>Pineapple</label><input type="checkbox" name="toppings" value="pineapple"></label>
         <label>Jalapeno<input type="checkbox" name="toppings" value="jalapeno"></label>
+        <h5>$2 in additional costs</h5>
         <label>Artichoke Hearts<input type="checkbox" name="toppings" value="artichoke"></label>
         <label>Olives<input type="checkbox" name="toppings" value="olives"></label>
         <label>Shredded Beef<input type="checkbox" name="toppings" value="beef"></label>
+        <div><button id="submit">Submit</button></div>
       </div>
-      <button id="submit">Submit</button>
     </div>
-    <div id="price-output"></div>
+    <div class="container" id="pizza-list">
+      <div id="price-output"></div>
+    </div>
   </body>
 </html>
