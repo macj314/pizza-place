@@ -10,12 +10,16 @@ h1{
   font-style: italic;
 }
 
-button{
-  color: black;
+h5{
+  font-style: oblique;
 }
 
 label{
-  padding-right: 10px;
+  
+}
+
+button{
+  color: black;
 }
 
 .form-one{

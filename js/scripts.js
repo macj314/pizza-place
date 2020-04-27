@@ -1,14 +1,17 @@
+function Orders(){
+  this.orders = [];
+  this.orderNumber = 0;
+}
+
+Orders.prototype.newOrder = function(pizza){
+  this.orders.push(pizza);
+  console.log(this.orders);
+}
+
 function Pizza(size){
   this.size = size;
   this.toppings = [];
 }
-
-//Take in an array of toppings and coverage, and push those toppings as key value pairs to this.toppings
-//Push a toppings coverage number to this.toppings
-//each push should look like: this.toppings.push([topping: string, coverage: 1]);
-// Pizza.prototype.addToppings = function(inputT){
-//     this.toppings.push(inputT);
-// }
 
 Pizza.prototype.priceCalculator = function(){
   let price = this.size;
@@ -26,21 +29,22 @@ Pizza.prototype.priceCalculator = function(){
   return price;
 }
 
+let orders = new Orders();
 $(document).ready(function(){
   $("#submit").click(function(event){
     event.preventDefault();
     let inputSize = parseInt($("input:radio[name=size]:checked").val());
-    console.log(inputSize);
     let pizza = new Pizza(inputSize);
     $("input:checkbox[name=toppings]:checked").each(function(){
       pizza.toppings.push($(this).val());
     });
+    orders.newOrder(pizza);
     console.log(pizza);
     $("#pizza-list").show();
-    if (isNaN(inputSize) === true){
-      $("#price-output").text("Please select a size for your pizza!");
-    } else {
-      $("#price-output").text("$" + pizza.priceCalculator());
-    }
+    // if (isNaN(inputSize) === true){
+    //   $("#price-output").text("Please select a size for your pizza!");
+    // } else {
+    //   $("#price-output").text("$" + pizza.priceCalculator());
+    // }
   })
 })
