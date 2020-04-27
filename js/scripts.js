@@ -1,9 +1,9 @@
 function Orders(){
-  this.orders = [];
+  this.ordersList = [];
 }
 
 Orders.prototype.newOrder = function(pizza){
-  this.orders.push(pizza);
+  this.ordersList.push(pizza);
   console.log(this.orders);
 }
 
@@ -40,7 +40,7 @@ function displayOrders(userOrders) {
   let orderSize = $("p#order-size");
   let orderToppings = $("ul#order-toppings");
   let htmlOrder = "";
-  userOrders.orders.forEach(function(pizza) {
+  userOrders.ordersList.forEach(function(pizza) {
     htmlOrder += "<li>" + pizza.toppings + "</li>";
   });
   orderToppings.html(htmlOrder);
@@ -58,7 +58,7 @@ $(document).ready(function(){
     console.log(pizza);
     console.log(orders);
     $("#pizza-list").show();
-    displayOrders(pizza);
+    displayOrders(orders);
     // if (isNaN(inputSize) === true){
     //   $("#price-output").text("Please select a size for your pizza!");
     // } else {
