@@ -5,6 +5,11 @@ body{
   margin-top: 6%;
 }
 
+h1{
+  color: black;
+  font-style: italic;
+}
+
 button{
   color: black;
 }
