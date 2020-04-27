@@ -1,6 +1,5 @@
 function Orders(){
   this.orders = [];
-  this.orderNumber = 0;
 }
 
 Orders.prototype.newOrder = function(pizza){
@@ -27,6 +26,11 @@ Pizza.prototype.priceCalculator = function(){
     }
   }
   return price;
+}
+
+Pizza.prototype.addButton = function(){
+  input.addEventListener ? input.addEventListener('click', this.getPrice.bind(this), false): 
+       input.attachEvent('onclick',this.getPrice.bind(this));
 }
 
 let orders = new Orders();
