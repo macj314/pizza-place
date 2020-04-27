@@ -36,6 +36,7 @@ $(document).ready(function(){
       pizza.toppings.push($(this).val());
     });
     console.log(pizza);
+    $("#pizza-list").show();
     if (isNaN(inputSize) === true){
       $("#price-output").text("Please select a size for your pizza!");
     } else {

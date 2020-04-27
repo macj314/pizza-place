@@ -1,26 +1,49 @@
 body{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: white;
   text-align: center;
+  margin-top: 6%;
+}
+
+button{
+  color: black;
 }
 
 .form-one{
   width: 50%;
+  margin-bottom: 1%;
+  margin-right: auto;
+  margin-left: auto;
   border: solid 1px cornsilk;
   background-color: rgb(52, 99, 187);
 }
 
 .size-field{
-  vertical-align: bottom;
-  width: 97%;
+  width: 95%;
   background-color: cornflowerblue;
-  margin: 3%;
-  padding: 10px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 30px;
   border: solid 1px rgb(119, 128, 250);
 }
 
 .toppings-field{
-  width: 97%;
+  width: 95%;
   background-color: cornflowerblue;
-  margin: 2%;
-  padding: 10px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 30px;
   border: solid 1px rgb(119, 128, 250);
+}
+
+#pizza-list{
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  border: solid 1px cornsilk;
+  background-color: rgb(52, 99, 187);
 }
