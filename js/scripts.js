@@ -37,13 +37,14 @@ Pizza.prototype.priceCalculator = function(){
 let orders = new Orders();
 
 function displayOrders(userOrders) {
-  let orderSize = $("p#order-size");
-  let orderToppings = $("ul#order-toppings");
-  let htmlOrder = "";
+  let pizzaList = $("#pizza-list");
+  let orderHTML = "<div>";
   userOrders.ordersList.forEach(function(pizza) {
-    htmlOrder += "<li>" + pizza.toppings + "</li>";
+    orderHTML += "<ul>";
+    orderHTML += "<li>" + pizza.toppings + "</li>" + "</ul>";
+    orderHTML += "$" + pizza.priceCalculator() + "</div>";
   });
-  orderToppings.html(htmlOrder);
+  pizzaList.html(orderHTML);
 };
 
 $(document).ready(function(){
@@ -58,7 +59,12 @@ $(document).ready(function(){
     console.log(pizza);
     console.log(orders);
     $("#pizza-list").show();
-    displayOrders(orders);
+    if (isNaN(inputSize) === true){
+      $("#price-output").text("Please select a size for your pizza!");
+    } else {
+      displayOrders(orders);
+    }
+
     // if (isNaN(inputSize) === true){
     //   $("#price-output").text("Please select a size for your pizza!");
     // } else {
