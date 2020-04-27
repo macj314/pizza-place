@@ -28,12 +28,24 @@ Pizza.prototype.priceCalculator = function(){
   return price;
 }
 
-Pizza.prototype.addButton = function(){
-  input.addEventListener ? input.addEventListener('click', this.getPrice.bind(this), false): 
-       input.attachEvent('onclick',this.getPrice.bind(this));
-}
+// Pizza.prototype.addButton = function(){
+//   let remove = document.createElement("remove");
+//   input.addEventListener ? input.addEventListener('click', this.getPrice.bind(this), false): 
+//        input.attachEvent('onclick',this.getPrice.bind(this));
+// }
 
 let orders = new Orders();
+
+function displayOrders(userOrders) {
+  let orderSize = $("p#order-size");
+  let orderToppings = $("ul#order-toppings");
+  let htmlOrder = "";
+  userOrders.orders.forEach(function(pizza) {
+    htmlOrder += "<li>" + pizza.toppings + "</li>";
+  });
+  orderToppings.html(htmlOrder);
+};
+
 $(document).ready(function(){
   $("#submit").click(function(event){
     event.preventDefault();
@@ -44,7 +56,9 @@ $(document).ready(function(){
     });
     orders.newOrder(pizza);
     console.log(pizza);
+    console.log(orders);
     $("#pizza-list").show();
+    displayOrders(pizza);
     // if (isNaN(inputSize) === true){
     //   $("#price-output").text("Please select a size for your pizza!");
     // } else {
